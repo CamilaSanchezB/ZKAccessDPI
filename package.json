@@ -1,0 +1,34 @@
+{
+  "name": "prueba-access-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CamilaSanchezB/ZKAccessDPI.git"
+  },
+  "keywords": [
+    "ZKAcces",
+    "3.5"
+  ],
+  "author": "Camila Sánchez Bonaldo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CamilaSanchezB/ZKAccessDPI/issues"
+  },
+  "homepage": "https://github.com/CamilaSanchezB/ZKAccessDPI#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "fast-csv": "^5.0.1",
+    "fs": "^0.0.1-security",
+    "node-adodb": "^5.0.3",
+    "odbc": "^2.4.9",
+    "path": "^0.12.7"
+  }
+}
