@@ -8,6 +8,13 @@ USERID,Badgenumber,name,lastname
 452,147,Santiago ,Guardiani
 614,100,Adrian ,Adoue
 615,103,Volodimy ,Belitskyy
+856,1052,Elias,Sanchez
+434,10000,Santiago,Cerviño
+435,10001,Federico,Cerviño
+436,10002,Lorena,Cerviño
+437,10003, Agustin,Cerviño
+438,10004,Laura ,Taylor
+439,10006,Oscar ,Ortiz de Elguea
 616,109,Mariano ,Marchesan
 617,118,Jorge ,Courett
 618,124,Gustavo ,Palacios
@@ -29,11 +36,14 @@ USERID,Badgenumber,name,lastname
 627,304,Ariel ,Ruiz
 628,309,Jose David,Perez
 629,38,Fabian ,Gebrikian
+630,4001,Martin,Caro 
+631,4002,Javier,Cardenas
 475,405,Gaston ,Acerbi
 479,416,Matias,Angeluk
 480,417,Julian,Rodriguez
 483,5,Jorge ,Olivares
 485,535,Ezequiel ,Chamorro
+632,4006,Ariel,Appiolaza 
 633,404,Natalio ,Ruiz
 634,408,Roman,Mandes
 635,413,Eric ,Fischer
@@ -43,32 +53,290 @@ USERID,Badgenumber,name,lastname
 495,612,Gabriel ,Gonzalez
 638,428,Pedro ,Grasso
 639,6,Daniel ,Pollet
+640,6000,Lucas ,Heuchert
+641,6001,Marcelo,Velazquez
+642,6003,Diego,Carrizo
+643,6005,Lopez,Jonathan
+644,6006,Gonzalez,Fernando
+645,6007,German,Quintas
 497,614,Walter,Cabrera
 501,623,Cesar,Giron
 502,624,Lewis,Maldonado Chacon
 503,625,Pablo Luis,Furno
+646,6008,Oscar,Quintero
 647,613,Ariel ,Campagne
 648,617,Reygubher,Medina
 649,620,Andrei ,Ekkert
 650,622,Gaston,Vizzotti
 651,626,German ,Massbie
+508,632,Javier,Lojo
+509,633,Oscar,Barreiro
+511,635,Marco ,Rifo
 513,66,Natalia ,Castro
 514,7,Gaspar ,Pedersen
 515,73,Guillermo ,Cepeda
 516,79,Marcos ,Monzon
 652,627,Julio David, Aranda
+653,630,Mariela ,Mastellone
+654,631,Julieta,Del Potro
 519,91,Cecilia ,Gil
 520,94,Jose Luis,Muñoz
+521,709,David Matias ,Bau
+655,634,Abel ,Romero
+656,636,Daniel ,Ciuro
 657,85,Tomas ,Bensadon
+658,9000,Carrizo ,Sebastian
 659,308,Juan Jose ,Perez
 660,628,Carlos ,Rodriguez
+661,710,Cecilia ,Antelo Gaspari
+528,712,Federico Hugo,Donatini
+532,716,Nelson ,Castro
+538,717,Juan José,Araujo
 663,112,Mario,Cedermaz
+664,714,Matías Ezequiel ,Ciracó
+665,713,Guillermo German,Puca
 666,303,Julian ,Correa Cardozo
+845,1030,Gabriel ,Britez
+849,1033,Daniel ,Felipacci
+553,734,Silvia Carolina,Lazo
+556,735,Mariano ,Massola
+667,1032,Iara ,Ruiz Gutierrez
+668,718,Juan José,Araujo
+669,721,Flavio Sergio ,Paz
+670,722,Jose Alberto ,Velasquez
+671,720,Mauro ,Vizzi
+672,728,Rhonald,Lopez 
+673,731,Karen Denise,Lascours
+674,730,Pablo,Urban
+588,763,Andrés,Timoszuk
 594,2,Andrés,Timoszuk
+676,732,Carlos Alberto,Gomez
+677,733,Marcos Gabriel,Martinez
+678,736,Amaya ,Chacon Yeixon
+679,737,Jose,Bongianino
+680,740,Yusmelys,Cedeño
+681,741,Daniel,Gomez Moreno
+682,748,Gustavo,Gonzalez
+850,1034,Sabrina ,Zanatta
+603,838,Tania ,Etchegoyen
+606,1040,Tomas ,Vispo
+607,848,Gonzalo Ezequiel ,Van Dam
 608,565,Edgardo Gabriel ,Pastran
+609,850,Edgardo Antonio ,Nicolett
+610,855,Lorenzo ,Cacciamani
+683,8018,Maximiliano,Quiroga
+684,8021,Pablo Alberto,Barrio
+685,743,Clides ,Valdemar Nava
+686,8019,Gabriel,Albornoz
+611,852,Juan Manuel Martin ,Rodriguez
+612,849,Cesar Daniel ,Velasquez
+613,858,Agustina ,Rozentul
+687,1035,Carlos,Albornoz
+688,750,Blas,Palmisciano 
+689,751,Daniel,Delgado 
+690,752,Sergio,Medina 
+691,8022,Sergio,Aroca
+839,1014,Christian ,Romero
+720,867,Santiago ,Giaconi
+721,869,Leandro Man,Santo Vidal
+722,870,Juan Andrés,Escoriza
+723,871,Andres ,Massetti
+724,872,Santiago ,Elgarrista
+725,874,Sebastian ,Cubile
+726,876,Capasso,Gonzalez 
+727,877,Franklin ,Aguilar Perez
+728,1043,Marcelo ,Gomez
+730,888,Armando ,Pezzente
+751,880,Rodrigo,Civetta 
+752,922,Luciano,Sosto 
+753,923,Luciano ,Troncoso
+754,924,Clara ,Del Prete
+755,925,Tania Paola ,Reynoso
+756,926,Leandro ,Andiarena
+757,927,Guido ,Izael Marrapodi
+758,914,Estela ,Maximiliano
+759,917,Cristian,Gauna
+760,928,Gustavo,Garay 
+761,931,Jorge,Zarza
+540,719,Joaquín Emanuel ,Peralta
+543,723,Luciano ,Petruzzo
+545,726,Matías,Beain Cortés
+549,729,Luciana,Boix
+693,8024,Luis Alberto,Vega
+694,8025, Agustin,Roja
+695,8026,Eduardo,Garcia
+696,754,Ariel Eduardo,Chaparro
+697,1036,Cristian,Romero
+698,8029,Julio Damian,Rios
+562,747,Facundo,Rostoll
+566,8020,Pablo,Zarzycki
+567,749,Paula,Diaz 
+699,8030,José,Pita
+700,1037,Gabriel,Salamanca
+701,755,Matías Ezequiel,Carbajal
+702,757,Valentin,Hermida
+703,759,Nicolas Horacio,Tixi
+704,1038,Martín,Di Caprio
+705,769,Martin,Maggione Pascual
+573,753,Luis,Panczij
+706,770,Leonardo Fabio,Oliva
+707,780,Walter Alejandro,Fernadez
+708,758,Diego Javier,Xamo 
+709,786,Jorge Eduardo,Casanueva
+710,999,Gonzalo,Arce
+711,837,Leonardo ,Mendez
+712,4791,Lisandro ,Rizzo
+713,4792,Martina ,Vidal
 714,846,German,Cometti
+590,764,Sergio,Dimarco
+591,1039,Florencia,Valotto
+592,767,Maximiliano Héctor,Ignes
+593,768,Nicolas ,DAlessandro
+600,836,Carolina ,Castaneda
+715,856,Erik ,Pedersen
+716,863,Nicolás ,Romanazzi
+717,864,Ciro ,García Recio
+718,1041,Agustin ,Soria
+719,866,Marcelo ,Garnier
+802,951,Ezequiel,Guastadisegno
+803,952,María Paula,Rearte Zurlo
+804,953,Cesar Gustavo,Cejas
+805,950,Martin,Alonso
 806,59,Andres,Pereira Muñoz
 807,61,Mario,Arredondo
+808,958,Martin ,Rivadavia
+809,9999,Estefania,Massari
+846,934,Darío,Cozzoli 
 854,120,Alejandro ,Ladreche
+731,883,Augusto ,Fox
+732,889,Gustavo ,Frexas
+733,895,Camila ,Meo
+734,1048,Jose ,Florez
+735,1049,Giovanni,Arias
+736,896,Florencia ,Secco
+737,898,Juan Cruz ,Bellagio
+739,1055,Luis ,Donofrio
+740,904,Evelyn ,Casabone
+848,899,Gustavo Roque,Coseani Bruhl
+830,1002,Natalia,Mosca
+831,1005,Juan Cruz,Rodriguez
+832,1006,Vannina Andrea ,Maidana
+833,1008,Marcos ,Staci
+834,1013,Francisco ,Montes
+835,1018,Christian ,Romero
+836,1020,Sofia ,Montes
+837,1021,Joaquin ,Dreon Rateriy
+838,1022,Lucas Adrian,Monsalve
+840,989,Mario Leonel,Orellana
+741,897,Ezequiel Nicolás ,León
+742,906,Andrés ,San José
 743,919,Adriana,Augusto
+744,920,Joaquin Francisco ,Rojas
+745,921,Natalia,Calderón
+746,913,Federico ,Elia
+747,916,Quimey Exequiel ,Calderon
+748,915,Leonardo Eduardo ,Ludueña
+749,905,Jonathan ,Bustos
+750,879,Esteban ,Sosa
+762,930,Marcelo,Aramayo
+763,929,Hernan ,Tusar
+764,932,Ignacio ,Rodríguez Correa
+765,933,Luciano ,Garmendia
+767,935,Andrés,Ailan 
+768,936,Esteban ,Caceres
+769,2042,Carlos,Paidicán 
+770,4045,Rodrigo Julián,Ortiz
+847,946,Marcos Agustín ,D´Aurelio
+897,1070,Matias Alejandro,Ayala
+771,4046,Yufra ,Jose Antonio
+772,4047,Juan,Ojeda Ilnao
+773,4048,Manuel,Torralbo Mansilla
+774,4049,Manuel,Aguilar Miranda
+775,4050,Ricardo Alberto,Soto
+776,4051,Miguel Eduard,Contreras
+778,4053,Sandro,Romero
+779,4054,Jorge,Yufra
+780,4055,Alejandra,Cardenas
+782,7001,Jorge,Albornoz
+783,7002,Fabian,Albornoz Ibañez
+784,7003,Tomas,Amadeo y Videla 
+785,7005,Hugo,Barria Legue
+786,7006, Alejandro,Barrere
+787,7008,Marcos,Dumpierres
+788,7009,Matias,Dumpierres
+789,7010,Federico,Feltes
+790,7011,Sergio,Fernandez Brito
+791,7012,Martin,Meretta
+792,7013,Horacio,MuÙŒiz
+793,7016, Adrian,Adoue
+794,7019,Jose Daniel,Cabrera
+795,7021,Daniel Adalberto,Romero
+796,742,Clides,Valdemar Nava
+797,760,Alfredo Anibal,HereÙŒu
+799,944,Joaquin ,Mena
+800,945,Santiago,Mendivil Grassi
+855,966,Natalia ,Suarez
+813,971,Luciano ,Brassi
+814,972,Leandro,Peña Sartori
+815,973,Marili Mercedes ,Cruz
+816,974,Agustín,Dominguez 
+817,975,Candela,Vattino
+818,977,Ivana Estefanía,Martinez
+819,979,Santiago ,Nivio
+820,980,Hugo,Guerra Palay
+821,981,Ignacio,Vazquez
+898,943,Rosario ,Paz
+899,1128,Martin ,Bazan
+862,1069,Alejandro Exequiel ,Marti
+864,1071,Julio ,Corrales
+865,1072,Cristian ,Vidal
+868,1077,Hector David,Valdez
+869,1074,Maria Victoria,Genine
+870,1078,Camila,Barrios
+871,1079,Jose,Fernandez 
+873,1076,Pablo Javier,Ojeda
+874,1075,Gonzalo Marcelo,Bermudez
+886,1112,Juan Ignacio ,Gonzalez
+841,1027,Adrian ,Ricci
+842,1501,Leandro,Fernandez
+843,1029,Yesika Milena,Bogado Bae
+844,1504,Monica,Cerviño
+851,1050,Abril,Villa
+857,1053,Analia,Leguizamon
+858,1056,Juan Ignacio,De Luca
+859,1057,Arnaldo,Drapata
+860,1058,Fernando,Gonzalez
+861,1059,Mauricio,Sosa
+884,1108,Malena ,Ucci
+885,1081,Matias Alejandro ,Ayala
+887,1113,Enzo ,Palmieri
+888,1115,Sofia,Grimald
+889,1116,Ginette,Celso
+890,1117,Maria Teresa ,Manzo
+891,1120,Esteban,Obiglio 
+892,1121,Luciana,Meregalli
 893,1122,Camila ,Sanchez Bonaldo
+894,1124,Soraya ,Blanco
+895,1125,Martin,Rivas
+900,1130,Manuel,Di Paolo
+901,1131,Marcos,Maestromey
+811,967,Santiago ,Leaden
+812,968,Adrian Cesar,Frilochi 
+822,984,Ruben,Piquin 
+823,985,Victor Martin,Vedda 
+824,988,Clara,Ito
+825,990,Florencia,Soto Ginestel 
+826,995,Asier,Hormaechea
+827,997,Ariel,Pensa
+828,1051,Rolando,Massabie
+829,1000,Maria Jose,Churruca
+872,1080,Yovani,Britez
+875,1083,Miguel,Hernandez Dugarte
+876,1087,Romina ,Tavanni
+877,1092,Jorge,Puricelli
+878,1093,Agustin,Ringa
+879,1097,Alejandra,Gutierrez
+880,1099,Aldana ,Rodriguez
+881,1100,Guido ,Creatini
+882,1105,Joaquin,Caparros
+883,1107,Vanesa ,Ponce

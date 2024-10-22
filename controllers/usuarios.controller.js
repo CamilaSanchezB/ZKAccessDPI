@@ -1,5 +1,6 @@
+const { ruta_csv_usuarios } = require("../config");
 const { obtenerNuevosUsuarios } = require("../services/usuarios.service");
-const { almacenarUsuariosCSV } = require("../utils/usuarios.util");
+const { cargarRegistrosCSV } = require("../utils/cargaCSV.util");
 
 async function cargarNuevoUsuario(usuario) {
   try {
@@ -14,7 +15,7 @@ async function cargarNuevoUsuario(usuario) {
     );
     return response.data;
   } catch (error) {
-    console.error(error?.message || error);
+    console.error("ERROR cargarNuevoUsuario: ",error?.message || error);
   }
 }
 
@@ -22,9 +23,9 @@ async function obtenerYCargarUsuarios() {
   try {
     let nuevos_usuarios = await obtenerNuevosUsuarios();
     if (nuevos_usuarios?.length > 0) {
-      await almacenarUsuariosCSV(nuevos_usuarios);
+      await cargarRegistrosCSV(nuevos_usuarios, ruta_csv_usuarios, Object.keys(nuevos_usuarios[0]));
       let promises = nuevos_usuarios?.map((usuario) =>
-        //   cargarNuevoUsuario(usuario)
+        //   cargarNuevoUsuario({...usuario, password:`${usuario.name?.split(" ")[0][0]?.toLowerCase()}${usuario.lastname?.split(" ")[0]?.toLowerCase()}`})
         console.log("cargando usuario", usuario.Badgenumber)
       );
       await Promise.allSettled(promises);
@@ -32,7 +33,7 @@ async function obtenerYCargarUsuarios() {
       console.log("No se registraron nuevos usuarios");
     }
   } catch (e) {
-    console.error("obtenerYMostrarUsuarios: ", e?.message || e);
+    console.error("ERROR obtenerYMostrarUsuarios: ", e?.message || e);
   }
 }
 

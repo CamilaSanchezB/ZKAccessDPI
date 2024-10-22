@@ -23,8 +23,7 @@ def registrarError(error):
 def descargaEventos(dlg,arch):
     try:
         arch = open("./logs/exec/"+str(datetime.date.today()) + ".log", "a")
-        windows = Desktop(backend="uia").windows()
-
+        
         app = Application(backend='uia').start(r"C:\ZKTeco\ZKAccess3.5\Access.exe")
         arch.write(str(datetime.datetime.now()) + ": Abriendo ZKAccess 3.5\n")
 
@@ -43,6 +42,7 @@ def descargaEventos(dlg,arch):
                 else:
                     registrarError(e)
             button_inicio_sesion = dlg.child_window(title="Inicio de Sesión", control_type="Button")
+            button_inicio_sesion.wait('visible', timeout=5)  
             button_inicio_sesion.click_input()
             arch.write(str(datetime.datetime.now()) + ": Inicio sesion\n")
 
@@ -61,6 +61,14 @@ def descargaEventos(dlg,arch):
             button_descargar = dlg.child_window(title="Descargar eventos", control_type="Button")
             button_descargar.wait("enabled", timeout=600).click_input()
             arch.write(str(datetime.datetime.now()) + ": Pestana descargar eventos\n")
+
+            # ********************
+            # *     ATENCION     *
+            # ********************
+            
+            # Descomentar las siguientes lineas significa descargar los eventos y borrarlos.
+            # No usar mientras se está probando el sistema con los relojes en producción. 
+            # Ya que el Agente CCZK no podrá leer los registros.
 
             # check_eliminar_despues_descarga = dlg.child_window(title="Eliminar los eventos después de descargar", control_type="CheckBox")
             # check_eliminar_despues_descarga.wait("enabled", timeout=600).click_input()

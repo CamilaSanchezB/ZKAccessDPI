@@ -1,9 +1,9 @@
-const { leerUsuariosExistentes } = require("../utils/usuarios.util");
-const {ruta_test} = require("../config.js");
+const { leerRegistrosExistentes } = require("../utils/cargaCSV.util");
+const {ruta_test, ruta_csv_usuarios} = require("../config.js");
 const odbc = require("odbc");
 
 async function obtenerNuevosUsuarios() {
-  const usuariosExistentes = await leerUsuariosExistentes();
+  const usuariosExistentes = await leerRegistrosExistentes(ruta_csv_usuarios);
   const idsExistentes = new Set(
     usuariosExistentes.map((usuario) => parseInt(usuario.USERID))
   );
@@ -20,7 +20,7 @@ async function obtenerNuevosUsuarios() {
     await conexion.close();
     return nuevosUsuarios;
   } catch (error) {
-    console.error("Error obtenerNuevosUsuarios:", error);
+    console.error("ERROR obtenerNuevosUsuarios:", error?.message || error);
   }
 }
 
