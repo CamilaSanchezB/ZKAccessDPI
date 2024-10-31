@@ -1,0 +1,12 @@
+#...librerias...
+#...definicion de funciones...
+
+#Inicialización de variables globales
+dlg = None  
+arch = None
+
+try:
+    descargaEventos(dlg, arch) #Invocación de función
+    call(["node", "./app.js"]) #Invoca la ejecución de app.js
+except Exception as e:
+    registrarError(e)  #Guarda log en archivo

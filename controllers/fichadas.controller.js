@@ -74,7 +74,7 @@ async function obtenerYCargarFichadas() {
             (d2) => d2.pin === d1.pin
           ).length;
           return { ...d1, cantidad }; // Agregar el campo cantidad
-        });
+        }); 
     }
 
     let promises = registrosNuevos?.map((reg) =>

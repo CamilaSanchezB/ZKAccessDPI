@@ -1,7 +1,5 @@
 from pywinauto import Application
-from pywinauto import Desktop
 import datetime
-import traceback
 import time
 from subprocess import call
 
@@ -54,7 +52,7 @@ def descargaEventos(dlg,arch):
             check_dispositivos.wait("enabled", timeout=600).click_input()
             arch.write(str(datetime.datetime.now()) + ": Selecciono dispositivos\n")
 
-            check_inbio = dlg.child_window(title="check row 0", control_type="DataItem")
+            check_inbio = dlg.child_window(title="check row 1", control_type="DataItem")
             check_inbio.wait("enabled", timeout=600).click_input()
             arch.write(str(datetime.datetime.now()) + ": Deselecciono inbio\n")
 
@@ -70,9 +68,9 @@ def descargaEventos(dlg,arch):
             # No usar mientras se está probando el sistema con los relojes en producción. 
             # Ya que el Agente CCZK no podrá leer los registros.
 
-            # check_eliminar_despues_descarga = dlg.child_window(title="Eliminar los eventos después de descargar", control_type="CheckBox")
-            # check_eliminar_despues_descarga.wait("enabled", timeout=600).click_input()
-            # arch.write(str(datetime.datetime.now()) + ": Selecciono eliminar los eventos después de descargar\n")
+            check_eliminar_despues_descarga = dlg.child_window(title="Eliminar los eventos después de descargar", control_type="CheckBox")
+            check_eliminar_despues_descarga.wait("enabled", timeout=600).click_input()
+            arch.write(str(datetime.datetime.now()) + ": Selecciono eliminar los eventos después de descargar\n")
 
             confirm_descarga = dlg.child_window(auto_id="btn_DownLoad", control_type="Button")
             confirm_descarga.wait("enabled", timeout=600).click_input()
@@ -84,7 +82,6 @@ def descargaEventos(dlg,arch):
 
         except Exception as e:
             registrarError(e)
-            traceback.print_exc()
             if dlg:
                 cerrarApp(dlg, arch)
         finally:

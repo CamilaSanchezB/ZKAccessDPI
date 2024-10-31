@@ -1,0 +1,46 @@
+def descargaEventos(dlg,arch):
+    try:
+        arch = open("./logs/exec/"+str(datetime.date.today()) + ".log", "a")
+        
+        app = Application(backend='uia').start(r"C:\ZKTeco\ZKAccess3.5\Access.exe")
+        arch.write(str(datetime.datetime.now()) + ": Abriendo ZKAccess 3.5\n")
+
+        dlg = app.window()
+
+        time.sleep(2)  
+        try:
+            try:
+                button_aceptar_dialog = dlg.child_window(title="Aceptar", control_type="Button")
+                button_aceptar_dialog.wait('visible', timeout=5)  
+                button_aceptar_dialog.click_input()
+                arch.write(str(datetime.datetime.now()) + ": Cierro popup\n")
+            except Exception as e:
+                if 'ElementNotFoundError' in str(e):
+                    arch.write(str(datetime.datetime.now()) + ": El botón 'Aceptar' no se encontró.\n")
+                else:
+                    registrarError(e)
+            button_inicio_sesion = dlg.child_window(title="Inicio de Sesión", control_type="Button")
+            button_inicio_sesion.wait('visible', timeout=5)  
+            button_inicio_sesion.click_input()
+            arch.write(str(datetime.datetime.now()) + ": Inicio sesion\n")
+
+            disp = dlg.child_window(auto_id="pic_device", control_type="Pane")
+            disp.wait("enabled", timeout=600).click_input()
+            arch.write(str(datetime.datetime.now()) + ": Pestana dispositivos\n")
+            .
+            .
+            button_regresar = dlg.child_window(auto_id="btn_exit", control_type="Button")
+            button_regresar.wait("enabled", timeout=1000).click_input()
+            arch.write(str(datetime.datetime.now()) + ": Finalizo la descarga\n")
+
+        except Exception as e:
+            registrarError(e)
+            if dlg:
+                cerrarApp(dlg, arch)
+        finally:
+            if dlg:
+                cerrarApp(dlg, arch)
+    except Exception as e:
+        if dlg:
+            cerrarApp(dlg, arch)
+        registrarError(e)

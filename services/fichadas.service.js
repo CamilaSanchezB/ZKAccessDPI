@@ -11,6 +11,7 @@ async function obtenerFichadas() {
         `SELECT ID, pin, time FROM acc_monitor_log WHERE DateValue(time) = Date()  AND pin <> ' ';`
       );
       await connection.close();
+      
       return procesarRegistros(result);      
     } catch (error) {
       console.error("Error:", error);
