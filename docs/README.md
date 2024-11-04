@@ -14,7 +14,7 @@
 
 ## Consideraciones
 
-<p>El sistema es implementable. Pero hay cuestiones a tener en cuenta, para registrar fichadas la API de Humand tiene dos endpoints: </p>
+<p>El sistema es implementable, pero hay cuestiones a tener en cuenta, para registrar fichadas la API de Humand tiene dos endpoints: </p>
 /time-tracking/entires/clockIn<br />
 /time-tracking/entires/clockOut<br />
 
@@ -77,4 +77,4 @@
     </li>
 </ol>
 
-<p style="font-weight: 700;"><span style="color: red;">*</span> Para la carga manual de fichadas, si Humand no proporciona una herramienta se pueda hacer un desarrollo web</p>
+<p style="font-weight: 700;"><span style="color: red;">*</span> Para la carga manual de fichadas, si Humand no proporciona una herramienta se puede hacer un desarrollo web</p>
