@@ -74,6 +74,9 @@
         Respetar las maneras de fichar: 1, 2, 3 según tabla
     </li>
     <li>
+        Como los registros se almacenan en archivos, en el caso 4, si no se logró registrar la salida en Humand se podría buscar y cargar de manera manual.
+    </li>
+    <li>
         No implementar sistema mixto 
     </li>
 </ol>
