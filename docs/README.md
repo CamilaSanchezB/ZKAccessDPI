@@ -56,7 +56,7 @@
         </tr>
     </tbody>
 </table>
-<p style="width:100%; margin:0; text-align:justify;">En el caso 4 el ERROR se generaría porque la app registraría la entrada (sin que el sistema se entere) y luego el reloj registraría un evento que, al ser el primero y único para el usuario, lo detectará como una entrada y la volverá a cargar.</p>
+<p style="width:100%; margin:0; text-align:justify;">En el caso 4 el ERROR se generaría porque la app registraría la entrada (sin que el sistema se entere) y luego el reloj registraría un evento que, al ser el primero y único para el usuario, lo detectará como una entrada y la volverá a cargar. Según lo hablado con Humand, en este caso al volver a enviarle una entrada, no se registraría y quedaría solo la primera (realizada por la app)</p>
 </div>
 <p>Este error tabién se genera si el usuario se olvida de fichar la entrada y ficha la salida en el reloj </p>
 
@@ -68,13 +68,13 @@
             <li>Cambiar la configuración actual de todos los relojes</li>
             <li>Enseñarle a los usuarios a que elijan si es entrada o salida</li>
         </ol>
+        De todas maneras, si bien se puede aplicar <strong>amplía la posibilidad de un error humano</strong>. Principalmente en la oficina y planta MDP, ya que los relojes son más viejos y es ligeramente más complicada la selección de entrada/salida.
     </li>
     <li>
         Respetar las maneras de fichar: 1, 2, 3 según tabla
     </li>
     <li>
-        No implementar sistema mixto
+        No implementar sistema mixto 
     </li>
 </ol>
 
-<p style="font-weight: 700;"><span style="color: red;">*</span> Para la carga manual de fichadas, si Humand no proporciona una herramienta se puede hacer un desarrollo web</p>
