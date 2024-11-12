@@ -1,0 +1,22 @@
+
+const {ruta_test} = require("../config.js"); //Importa constante
+const odbc = require("odbc"); // Importa libreria
+const { procesarRegistros } = require("../utils/fichadas.util.js"); //Importa función
+
+async function obtenerFichadas() {
+    //Define el driver de conexión y la ruta
+    const connectionString = `Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=${ruta_test};`;
+    try {
+      const connection = await odbc.connect(connectionString); //Conecta con la bd
+      const result = await connection.query(
+        `SELECT ID, pin, time FROM acc_monitor_log WHERE DateValue(time) = Date()  AND pin <> ' ';`
+      ); //Ejecuta consulta
+      await connection.close(); //Cierra la conexion
+      
+      return procesarRegistros(result); //Devuelve el resultado de la invocación      
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  module.exports = {obtenerFichadas}

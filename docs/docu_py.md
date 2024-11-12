@@ -12,5 +12,9 @@
 ### descargaEventos
 [](_media/python_examples/descargaEventos.txt ':include :type=code python')
 
+### registrarError
+[](_media/python_examples/registrarError.txt ':include :type=code python')
 
+### cerrarApp
+[](_media/python_examples/cerrarApp.txt ':include :type=code python')
 

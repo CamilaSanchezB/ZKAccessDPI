@@ -1,0 +1,4 @@
+def registrarError(error):
+    error_log = open("./logs/error/"+str(datetime.date.today()) + ".log", "a") #Abre el log de errores diario
+    error_log.write(str(datetime.datetime.now()) + ' ERROR: ' + str(error) + "\n") #Escribe el error
+    error_log.close() #Cierra el archivo

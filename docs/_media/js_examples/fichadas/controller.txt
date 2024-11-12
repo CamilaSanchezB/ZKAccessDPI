@@ -1,0 +1,12 @@
+/** Sección declarativa **/
+/* Importa funciones */
+const { obtenerFichadas } = require("../services/fichadas.service"); 
+const { formatearYCargarFichadas } = require("../utils/fichadas.util");
+const { leerRegistrosExistentes } = require("../utils/cargaCSV.util");
+
+/* Importa constantes */
+const { ruta_csv_fichadas } = require("../config");
+
+/* Importa librerias */
+const path = require("path");
+const { format } = require("date-fns");

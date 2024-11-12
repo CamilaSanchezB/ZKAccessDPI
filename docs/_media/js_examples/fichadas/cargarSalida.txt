@@ -1,0 +1,21 @@
+async function cargarSalida(fichada) {
+  try {
+    //Envía solicitud POST a la API
+    const response = await axios.post(
+      `https://api-prod.humand.co/public/api/v1/time-tracking/entries/clockOut`,
+      {
+        employeeId: fichada.pin, //legajo
+        now: fichada.time,
+        comment: "Generado por sistema de integracion"
+      },
+      {
+        headers: {
+          Authorization: "Basic " + API_KEY,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("ERROR cargarNuevoUsuario: ",error?.message || error);
+  }
+}

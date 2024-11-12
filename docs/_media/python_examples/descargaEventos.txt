@@ -1,13 +1,13 @@
 def descargaEventos(dlg,arch):
     try:
-        arch = open("./logs/exec/"+str(datetime.date.today()) + ".log", "a")
+        arch = open("./logs/exec/"+str(datetime.date.today()) + ".log", "a") #Abre el archivo log de ejecucion diaria
         
-        app = Application(backend='uia').start(r"C:\ZKTeco\ZKAccess3.5\Access.exe")
-        arch.write(str(datetime.datetime.now()) + ": Abriendo ZKAccess 3.5\n")
+        app = Application(backend='uia').start(r"C:\ZKTeco\ZKAccess3.5\Access.exe") #Abre el programa ZKAccess3.5
+        arch.write(str(datetime.datetime.now()) + ": Abriendo ZKAccess 3.5\n") #Registra lo hecho
 
-        dlg = app.window()
+        dlg = app.window() #Asigna a la variable global la ventana actual
 
-        time.sleep(2)  
+        time.sleep(2)  #Espera 2 segundos
         try:
             try:
                 button_aceptar_dialog = dlg.child_window(title="Aceptar", control_type="Button")
@@ -36,11 +36,11 @@ def descargaEventos(dlg,arch):
         except Exception as e:
             registrarError(e)
             if dlg:
-                cerrarApp(dlg, arch)
+                cerrarApp(dlg, arch) #Si hay una ventana abierta la cierra
         finally:
             if dlg:
-                cerrarApp(dlg, arch)
+                cerrarApp(dlg, arch) #Si hay una ventana abierta la cierra
     except Exception as e:
         if dlg:
-            cerrarApp(dlg, arch)
+            cerrarApp(dlg, arch) #Si hay una ventana abierta la cierra
         registrarError(e)

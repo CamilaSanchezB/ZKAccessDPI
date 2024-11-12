@@ -78,7 +78,6 @@ async function obtenerYCargarFichadas() {
     }
 
     let promises = registrosNuevos?.map((reg) =>
-      //   cargarNuevoUsuario(usuario)
       console.log(
         (parseInt(reg.cantidad) + 1) % 2 === 0
           ? "Cargando salida"

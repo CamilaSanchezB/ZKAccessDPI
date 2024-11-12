@@ -1,0 +1,8 @@
+/** Importa funciones **/
+
+const { obtenerYCargarFichadas } = require("./controllers/fichadas.controller.js"); 
+const { obtenerYCargarUsuarios } = require("./controllers/usuarios.controller.js");
+
+/** Invocacion **/
+obtenerYCargarUsuarios();
+obtenerYCargarFichadas();

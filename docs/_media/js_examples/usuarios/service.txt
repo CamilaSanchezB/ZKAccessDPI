@@ -1,0 +1,4 @@
+const { leerRegistrosExistentes } = require("../utils/cargaCSV.util");
+const {ruta_test, ruta_csv_usuarios} = require("../config.js");
+const odbc = require("odbc");
+
