@@ -1,5 +1,5 @@
 # Esquematización del flujo de datos
-### HOLA!!!
+
 ![Esquema](_media/schema.jpg)
 
 1. Se cargan usuarios y fichadas en los relojes
