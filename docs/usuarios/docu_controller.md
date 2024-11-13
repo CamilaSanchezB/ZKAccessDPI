@@ -1,7 +1,3 @@
-# Librerías
-
-1. **odbc:** Interfaz de conexión entre Node.js y unixODBC. Permite la conexión con la bd Access
-
 # Funcionamiento
 [](../_media/js_examples/usuarios/controller.txt ':include :type=code javascript')
 
