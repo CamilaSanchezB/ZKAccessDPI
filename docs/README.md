@@ -6,7 +6,7 @@
 2. app.py abre e interactúa con ZKAcces 3.5, descarga eventos (fichadas)
 3. Los eventos se registran en la base de datos
 4. Se ejecuta app.js
-   - Levanta los datos de la bbdd ZKAccess.mdb
+   - Levanta los datos de la bd ZKAccess.mdb
    - Si se encuentra nuevos usuarios se suman a un .csv y se suben a Humand
    - Se filtran los registros de las fichadas:
      - **Se discrimina entre entrada y salida.**

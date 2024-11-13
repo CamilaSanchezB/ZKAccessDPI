@@ -1,0 +1,43 @@
+function procesarRegistros(registros) {
+  // Ordenar los registros primero por PIN y luego por tiempo
+  registros.sort((a, b) => {
+    const comparacionPorPin = a.pin.localeCompare(b.pin); // Comparar por PIN
+    return comparacionPorPin !== 0
+      ? comparacionPorPin
+      : new Date(a.time) - new Date(b.time); // Si son el mismo PIN, ordenar por tiempo
+  });
+
+  const registrosFiltrados = []; // Array para almacenar los registros filtrados
+  const timeLimit = 5 * 60 * 1000; // Limite de tiempo de 5 minutos (en milisegundos)
+
+  // Recorrer todos los registros para filtrarlos según las condiciones
+  for (let i = 0; i < registros.length; i++) {
+    const pinActual = registros[i].pin;
+    const dataFichadas = obtenerRegistrosPorPin(
+      path.join(ruta_csv_fichadas, `${format(new Date(), "yyyy-MM-dd")}.csv`),
+      pinActual
+    );
+
+    // Si ya existen fichadas para el PIN, comprobar si se debe agregar el nuevo registro
+    if (dataFichadas.length > 0) {
+      const ultimoTimeFichado = dataFichadas[dataFichadas.length - 1].time;
+
+      if (
+        i === 0 || // Si es el primer registro
+        pinActual !== registros[i - 1].pin || // Si el PIN es diferente al anterior
+        (deberiaAgregarRegistro(registros[i], ultimoTimeFichado, timeLimit) && 
+         new Date(registros[i].time) - new Date(registros[i - 1].time) > timeLimit) // Si ha pasado más de 5 minutos desde el último registro
+      ) {
+        registrosFiltrados.push(registros[i]); // Agregar el registro filtrado
+      }
+    } else if (
+      i === 0 || // Si es el primer registro
+      pinActual !== registros[i - 1].pin || // Si el PIN es diferente al anterior
+      new Date(registros[i].time) - new Date(registros[i - 1].time) > timeLimit // Si ha pasado más de 5 minutos desde el último registro
+    ) {
+      registrosFiltrados.push(registros[i]); // Agregar el registro filtrado
+    }
+  }
+  
+  return registrosFiltrados; // Retornar los registros que cumplen con las condiciones
+}

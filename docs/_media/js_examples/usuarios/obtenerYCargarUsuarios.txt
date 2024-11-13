@@ -1,0 +1,24 @@
+async function obtenerYCargarUsuarios() {
+  try {
+    let nuevos_usuarios = await obtenerNuevosUsuarios(); 
+    //Si hay al menos un usuario nuevo
+    if (nuevos_usuarios?.length > 0) {
+      // Los carga en el archivo csv de usuarios 
+      await cargarRegistrosCSV(nuevos_usuarios, ruta_csv_usuarios, Object.keys(nuevos_usuarios[0]));
+      
+      //Por cada usuario genera una promesa con la invocacion de cargarNuevoUsuario
+      let promises = nuevos_usuarios?.map((usuario) =>
+        cargarNuevoUsuario({...usuario, password:`${usuario.name?.split(" ")[0][0]?.toLowerCase()}${usuario.lastname?.split(" ")[0]?.toLowerCase()}`})
+      );
+
+      //Resuelve todas las promesas
+      await Promise.allSettled(promises);
+    } else {
+      console.log("No se registraron nuevos usuarios");
+    }
+  } catch (e) {
+    console.error("ERROR obtenerYMostrarUsuarios: ", e?.message || e);
+  }
+}
+
+module.exports = { cargarNuevoUsuario, obtenerYCargarUsuarios };

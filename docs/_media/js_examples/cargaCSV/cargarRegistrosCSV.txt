@@ -1,0 +1,26 @@
+async function cargarRegistrosCSV(registros, ruta, headers) {
+  try {
+    const writableStream = fs.createWriteStream(ruta, { flags: 'a' });
+
+    // Verificar si el archivo existe y tiene contenido
+    const fileExists = fs.existsSync(ruta);
+    if (!fileExists || fs.readFileSync(ruta, 'utf8').trim().length === 0) {
+      // Si no existe o está vacío, escribir los encabezados
+      writableStream.write(headers.join(',') + '\n'); // Agregar encabezados
+    }
+
+    fastcsv
+      .write(registros, { headers: false }) //Ecribe los registros
+      .on('finish', () => {
+        console.log(`Los registros se han guardado en ${ruta}`);
+        const writableStream2 = fs.createWriteStream(ruta, { flags: 'a' }); //Crea un nuevo flujo de escritura
+        writableStream2.write('\n'); //escribe un espacio en blanco
+        writableStream2.end();
+        writableStream2.close(); //cierra el nuevo flujo
+      })
+      .pipe(writableStream);
+      
+  } catch (e) {
+    console.error('ERROR cargarRegistrosCSV: ', e?.message || e);
+  }
+}

@@ -1,0 +1,17 @@
+// Importa constantes
+const { ruta_csv_fichadas } = require("../config"); // Ruta del archivo CSV de fichadas
+
+//Importa funciones
+const {
+  cargarRegistrosCSV, 
+  obtenerRegistrosPorPin, 
+} = require("./cargaCSV.util");
+
+// Importa liberias
+const path = require("path"); 
+const { format } = require("date-fns"); 
+
+
+
+
+

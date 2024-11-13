@@ -1,0 +1,20 @@
+function formatearYCargarFichadas(fichadas) {
+  // Eliminar el campo 'cantidad' de cada registro
+  fichadas.map((d) => {
+    delete d["cantidad"];
+  });
+
+  // Si hay fichadas para cargar, se cargan al archivo CSV
+  if (fichadas.length > 0) {
+    cargarRegistrosCSV(
+      fichadas,
+      path.join(ruta_csv_fichadas, `${format(new Date(), "yyyy-MM-dd")}.csv`),
+      Object.keys(fichadas[0]) // Obtener las claves de las fichadas como encabezados del CSV
+    );
+  } else {
+    console.log("No se registraron nuevas fichadas."); // Si no hay fichadas, mostrar mensaje
+  }
+}
+
+// Exportar las funciones para ser utilizadas en otros módulos
+module.exports = { procesarRegistros, formatearYCargarFichadas };

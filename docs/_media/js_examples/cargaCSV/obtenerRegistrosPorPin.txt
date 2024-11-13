@@ -1,0 +1,35 @@
+
+function obtenerRegistrosPorPin(nombreArchivo, pinBuscado) {
+    const registrosFiltrados = [];
+
+    // Leer el archivo CSV
+    const csvData = fs.readFileSync(nombreArchivo, 'utf8');
+    const lineas = csvData.trim().split('\n');
+
+    // Obtener el encabezado
+    const encabezado = lineas[0].split(',');
+
+    // Procesar las líneas restantes
+    for (let i = 1; i < lineas.length; i++) {
+        const fila = lineas[i].split(',');
+        const registro = {};
+
+        // Crear un objeto para cada fila
+        for (let j = 0; j < encabezado.length; j++) {
+            registro[encabezado[j]] = fila[j];
+        }
+
+        // Filtrar por pin
+        if (registro.pin === String(pinBuscado)) {
+            registrosFiltrados.push(registro);
+        }
+    }
+
+    return registrosFiltrados;
+}
+
+module.exports = {
+  cargarRegistrosCSV,
+  leerRegistrosExistentes,
+  obtenerRegistrosPorPin
+};

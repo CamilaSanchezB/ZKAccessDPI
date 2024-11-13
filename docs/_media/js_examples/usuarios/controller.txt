@@ -1,0 +1,6 @@
+//Importa constante
+const { ruta_csv_usuarios } = require("../config");
+
+//Importa funciones
+const { obtenerNuevosUsuarios } = require("../services/usuarios.service");
+const { cargarRegistrosCSV } = require("../utils/cargaCSV.util");

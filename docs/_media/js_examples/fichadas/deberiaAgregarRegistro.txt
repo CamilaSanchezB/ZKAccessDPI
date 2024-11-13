@@ -1,0 +1,7 @@
+// Función que determina si un registro debe ser agregado, basado en el tiempo y un límite
+
+function deberiaAgregarRegistro(registro, lastTime, tiempoLimite) {
+  return (
+    !lastTime || new Date(registro.time) - new Date(lastTime) > tiempoLimite
+  );
+}

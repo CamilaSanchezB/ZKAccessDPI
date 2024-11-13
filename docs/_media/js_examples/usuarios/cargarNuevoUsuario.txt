@@ -1,0 +1,17 @@
+async function cargarNuevoUsuario(usuario) {
+  try {
+    // Envia solicitud POST a la API con los datos del nuevo usuario
+    const response = await axios.post(
+      `https://api-prod.humand.co/public/api/v1/users`,
+      usuario,
+      {
+        headers: {
+          Authorization: "Basic " + API_KEY,
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("ERROR cargarNuevoUsuario: ",error?.message || error);
+  }
+}

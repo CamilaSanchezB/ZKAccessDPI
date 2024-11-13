@@ -6,9 +6,9 @@ const {
 const path = require("path");
 const { format } = require("date-fns");
 
-function deberiaAgregarRegistro(registro, ultimoTime, tiempoLimite) {
+function deberiaAgregarRegistro(registro, lastTime, tiempoLimite) {
   return (
-    !ultimoTime || new Date(registro.time) - new Date(ultimoTime) > tiempoLimite
+    !lastTime || new Date(registro.time) - new Date(lastTime) > tiempoLimite
   );
 }
 
