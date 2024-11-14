@@ -13,10 +13,16 @@ function procesarRegistros(registros) {
   // Recorrer todos los registros para filtrarlos según las condiciones
   for (let i = 0; i < registros.length; i++) {
     const pinActual = registros[i].pin;
-    const dataFichadas = obtenerRegistrosPorPin(
-      path.join(ruta_csv_fichadas, `${format(new Date(), "yyyy-MM-dd")}.csv`),
-      pinActual
+        let dataFichadas = [];
+    let archivo = path.join(
+      ruta_csv_fichadas,
+      `${format(new Date(), "yyyy-MM-dd")}.csv`
     );
+    fs.access(archivo, fs.constants.F_OK, (err) => {
+      if (!err) { //Si existe el archivo de fichadas
+        dataFichadas = obtenerRegistrosPorPin(archivo, pinActual); 
+      }
+    });
 
     // Si ya existen fichadas para el PIN, comprobar si se debe agregar el nuevo registro
     if (dataFichadas.length > 0) {

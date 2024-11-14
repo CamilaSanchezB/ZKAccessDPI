@@ -1,11 +1,11 @@
 
-const {ruta_test} = require("../config.js"); //Importa constante
+const {ruta_bd} = require("../config.js"); //Importa constante
 const odbc = require("odbc"); // Importa libreria
 const { procesarRegistros } = require("../utils/fichadas.util.js"); //Importa función
 
 async function obtenerFichadas() {
     //Define el driver de conexión y la ruta
-    const connectionString = `Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=${ruta_test};`;
+    const connectionString = `Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=${ruta_bd};`;
     try {
       const connection = await odbc.connect(connectionString); //Conecta con la bd
       const result = await connection.query(

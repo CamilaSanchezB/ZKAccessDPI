@@ -5,8 +5,9 @@ const { formatearYCargarFichadas } = require("../utils/fichadas.util");
 const { leerRegistrosExistentes } = require("../utils/cargaCSV.util");
 
 /* Importa constantes */
-const { ruta_csv_fichadas } = require("../config");
+const { ruta_csv_fichadas, API_KEY } = require("../config");
 
 /* Importa librerias */
 const path = require("path");
 const { format } = require("date-fns");
+const axios = require("axios");

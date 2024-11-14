@@ -16,6 +16,6 @@ async function cargarSalida(fichada) {
     );
     return response.data;
   } catch (error) {
-    console.error("ERROR cargarNuevoUsuario: ",error?.message || error);
+    console.error("ERROR cargarSalida: ",error?.message || error);
   }
 }

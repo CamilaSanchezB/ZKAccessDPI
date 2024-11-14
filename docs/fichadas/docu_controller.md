@@ -2,6 +2,8 @@
 
 1. **path:** Utilizada para las rutas (módulo nativo de Node.js)
 2. **date-fns:** Utilizada para manipular fechas
+3. **axios:** Cliente HTTP basado en promesas
+
 
 # Funcionamiento
 [](../_media/js_examples/fichadas/controller.txt ':include :type=code javascript')

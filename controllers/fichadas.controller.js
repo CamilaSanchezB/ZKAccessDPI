@@ -2,17 +2,19 @@ const { obtenerFichadas } = require("../services/fichadas.service");
 const { formatearYCargarFichadas } = require("../utils/fichadas.util");
 const { leerRegistrosExistentes } = require("../utils/cargaCSV.util");
 const path = require("path");
-const { ruta_csv_fichadas } = require("../config");
+const { ruta_csv_fichadas, API_KEY } = require("../config");
 const { format } = require("date-fns");
+const axios = require("axios");
+
 
 async function cargarEntrada(fichada) {
   try {
     const response = await axios.post(
-      `https://api-prod.humand.co/public/api/v1/time-tracking/entries/clockIn`,
+      `https://posttestserver.dev/p/pta1hbcdh5v9ph72/post`,
       {
         employeeId: fichada.pin,
         now: fichada.time,
-        comment: "Generado por sistema de integracion"
+        comment: "Entrada. Generado por sistema de integracion",
       },
       {
         headers: {
@@ -22,17 +24,17 @@ async function cargarEntrada(fichada) {
     );
     return response.data;
   } catch (error) {
-    console.error("ERROR cargarNuevoUsuario: ",error?.message || error);
+    console.error("ERROR cargarEntrada: ", error?.message || error);
   }
 }
 async function cargarSalida(fichada) {
   try {
     const response = await axios.post(
-      `https://api-prod.humand.co/public/api/v1/time-tracking/entries/clockOut`,
+      `https://posttestserver.dev/p/pta1hbcdh5v9ph72/post`,
       {
         employeeId: fichada.pin,
         now: fichada.time,
-        comment: "Generado por sistema de integracion"
+        comment: "Salida. Generado por sistema de integracion",
       },
       {
         headers: {
@@ -42,15 +44,14 @@ async function cargarSalida(fichada) {
     );
     return response.data;
   } catch (error) {
-    console.error("ERROR cargarNuevoUsuario: ",error?.message || error);
+    console.error("ERROR cargarSalida: ", error?.message || error);
   }
 }
-
 
 async function obtenerYCargarFichadas() {
   try {
     let fichadas = await obtenerFichadas();
-   
+
     let first = false;
     let registrosViejos = await leerRegistrosExistentes(
       path.join(ruta_csv_fichadas, `${format(new Date(), "yyyy-MM-dd")}.csv`)
@@ -74,15 +75,13 @@ async function obtenerYCargarFichadas() {
             (d2) => d2.pin === d1.pin
           ).length;
           return { ...d1, cantidad }; // Agregar el campo cantidad
-        }); 
+        });
     }
 
     let promises = registrosNuevos?.map((reg) =>
-      console.log(
-        (parseInt(reg.cantidad) + 1) % 2 === 0
-          ? "Cargando salida"
-          : "Cargando entrada"
-      )
+      (parseInt(reg.cantidad) + 1) % 2 === 0
+        ? cargarSalida(reg)
+        : cargarEntrada(reg)
     );
     await Promise.allSettled(promises);
     formatearYCargarFichadas(registrosNuevos);

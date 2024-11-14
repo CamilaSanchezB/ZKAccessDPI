@@ -1,11 +1,17 @@
 const path = require("path"); //Importa modulo path
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 //Define constantes
-const ruta_test = path.join(__dirname, "test.mdb"); //ruta actual + "/test.mdb"
+const ruta_bd =
+  process.env.NODE_ENV === "development"
+    ? path.join(__dirname, "test.mdb")
+    : path.join("C:", "ZKTeco", "ZKAccess3.5", "ZKAccess.mdb");
 const ruta_csv = path.join(__dirname, "data"); //ruta actual + "/data"
 const ruta_csv_usuarios = path.join(ruta_csv, "userinfo.csv"); //ruta_csv + "/userinfo.csv"
 const ruta_csv_fichadas = path.join(ruta_csv, "fichadas"); //ruta_csv + "/fichadas"
 const API_KEY = process.env.API_KEY; //Obtiene credenciales de la api del archivo .env
 
 //Exporta constantes
-module.exports = { ruta_test, ruta_csv_usuarios, ruta_csv_fichadas, API_KEY };
+module.exports = { ruta_bd, ruta_csv_usuarios, ruta_csv_fichadas, API_KEY };

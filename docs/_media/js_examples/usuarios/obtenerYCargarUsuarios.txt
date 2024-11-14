@@ -14,7 +14,7 @@ async function obtenerYCargarUsuarios() {
       //Resuelve todas las promesas
       await Promise.allSettled(promises);
     } else {
-      console.log("No se registraron nuevos usuarios");
+      console.log("No se registraron nuevos usuarios.");
     }
   } catch (e) {
     console.error("ERROR obtenerYMostrarUsuarios: ", e?.message || e);

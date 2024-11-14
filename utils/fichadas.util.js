@@ -3,6 +3,7 @@ const {
   cargarRegistrosCSV,
   obtenerRegistrosPorPin,
 } = require("./cargaCSV.util");
+const fs = require("fs");
 const path = require("path");
 const { format } = require("date-fns");
 
@@ -25,10 +26,16 @@ function procesarRegistros(registros) {
   const timeLimit = 5 * 60 * 1000; // 5 minutos en milisegundos
   for (let i = 0; i < registros.length; i++) {
     const pinActual = registros[i].pin;
-    const dataFichadas = obtenerRegistrosPorPin(
-      path.join(ruta_csv_fichadas, `${format(new Date(), "yyyy-MM-dd")}.csv`),
-      pinActual
+    let dataFichadas = [];
+    let archivo = path.join(
+      ruta_csv_fichadas,
+      `${format(new Date(), "yyyy-MM-dd")}.csv`
     );
+    fs.access(archivo, fs.constants.F_OK, (err) => {
+      if (!err) {
+        dataFichadas = obtenerRegistrosPorPin(archivo, pinActual);
+      }
+    });
 
     if (dataFichadas.length > 0) {
       const ultimoTimeFichado = dataFichadas[dataFichadas.length - 1].time;

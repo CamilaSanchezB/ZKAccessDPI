@@ -16,6 +16,6 @@ async function cargarEntrada(fichada) {
     );
     return response.data; 
   } catch (error) {
-    console.error("ERROR cargarNuevoUsuario: ",error?.message || error);
+    console.error("ERROR cargarEntrada: ",error?.message || error);
   }
 }
